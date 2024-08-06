@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/images/more_blurred_image.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow-y: auto;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            text-align: center;
+        }
+        .header {
+            grid-column: span 3;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .back-button {
+            grid-column: span 3;
+            text-align: center;
+        }
+        .back-button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button button:hover {
+            background-color: #555;
+        }
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .header, .back-button {
+                grid-column: span 1;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            .back-button button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Data Visualization</h1>
+        </div>
+        <img src="{{ url_for('static', filename='images/visualization1.png') }}" alt="Distribution of Closing Prices">
+        <img src="{{ url_for('static', filename='images/visualization2.png') }}" alt="Top 10 Closing Prices Over Time">
+        <img src="{{ url_for('static', filename='images/visualization3.png') }}" alt="Top 10 Volumes Traded Over Time">
+        <img src="{{ url_for('static', filename='images/visualization4.png') }}" alt="Open vs Close Price Distribution">
+        <img src="{{ url_for('static', filename='images/visualization5.png') }}" alt="Box Plot of High vs Low Prices">
+        <img src="{{ url_for('static', filename='images/visualization6.png') }}" alt="Top 10 Rolling Average of Closing Price">
+        <div class="back-button">
+            <button type="button" onclick="window.location.href='/'">Back to Prediction</button>
+        </div>
+    </div>
+</body>
+</html>
